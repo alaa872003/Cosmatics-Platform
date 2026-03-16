@@ -1,8 +1,20 @@
 
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router";
+import { addToCart } from "../../store/cartSlice";
 
 export default function Product({ product }) {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (e) => {
+    // Prevents the Link from navigating when clicking the cart icon
+    e.preventDefault(); 
+    e.stopPropagation();
+    
+    // Dispatches the product data to your Redux store
+    dispatch(addToCart(product));
+  };
   return (
     <div className="group relative bg-white dark:bg-[#111111] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-transparent dark:border-white/5">
       {/* Image Container */}
@@ -18,7 +30,7 @@ export default function Product({ product }) {
           <button className="p-2 bg-white dark:bg-charcoal rounded-full shadow-md text-charcoal dark:text-cream hover:bg-dustyRose hover:text-white transition-colors">
             <CiHeart size={20} />
           </button>
-          <button className="p-2 bg-white dark:bg-charcoal rounded-full shadow-md text-charcoal dark:text-cream hover:bg-dustyRose hover:text-white transition-colors">
+          <button onClick={handleAddToCart} className="p-2 bg-white dark:bg-charcoal rounded-full shadow-md text-charcoal dark:text-cream hover:bg-dustyRose hover:text-white transition-colors">
             <CiShoppingCart size={20} />
           </button>
         </div>

@@ -35,8 +35,9 @@ export const cartSlice = createSlice({
 },
     decreaseQuantity:(state,action)=>{
     const exist=state.items.find(item=>item.id===action.payload);
-    if(exist){
+    if(exist && exist.quantity > 1){
       exist.quantity-=1
+    
     }
     state.counter-=1
     console.log('decrease item',state.items,state.counter);

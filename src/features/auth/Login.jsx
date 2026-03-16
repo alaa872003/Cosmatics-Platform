@@ -1,37 +1,3 @@
-// import React from 'react'
-// import { z } from "zod";
-// import { useForm } from "react-hook-form"
-// import { zodResolver } from '@hookform/resolvers/zod'
-// import { Link } from 'react-router';
-
-// const loginSchema = z.object({
-//   email: z.string().email("Invalid email address"),
-//   password: z.string().min(6, "Invalid password "),
-// });
-
-// export default function Login() {
-//   const { register, handleSubmit,  formState: { errors }
-//  } = useForm(  {resolver: zodResolver(loginSchema)},
-// )
-//   const onSubmit = (data) => console.log(data)
-//   return (
-//     <form onSubmit={handleSubmit(onSubmit)}className='mt-20 flex flex-col gap-5 w-100 md-300 mx-auto px-4 sm:px-10'>
-      
-//       <input {...register("email")} placeholder='example@gmail.com'className='border px-3 py-2
-// '/>
-//             {errors.email && <p className='text-red-700'>{errors.email.message}</p>}
-
-//       <input {...register("password")} type="password" placeholder='password' className='border px-3  py-2'/>
-//             {errors.password && <p className='text-red-700'>{errors.password.message}</p>}
-
-//     <p className="text-center">I am new here |<Link to="/signUp" className="text-amber-600"> Register</Link></p>
-
-//       <input type="submit" className='bg-gray-600 text-white p-4 hover:bg-gray-500 transition-colors'/>
-//     </form>
-//   )
-// }
-
-
 import React from 'react'
 import { z } from "zod";
 import { useForm } from "react-hook-form"
